@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "ff4c6ea9-389d-4555-a0e5-d82a0c2be7df",
+		"name": "Cab Booking API",
+		"description": "Collection for Cab Booking API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32698412"
+	},
+	"item": [
+		{
+			"name": "List Cabs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/list-cabs?latitude={{latitude}}&longitude={{longitude}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"list-cabs"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "{{latitude}}"
+						},
+						{
+							"key": "longitude",
+							"value": "{{longitude}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Cab",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{user_id}}\",\n    \"source\": \"{{source}}\",\n    \"destination\": \"{{destination}}\",\n    \"lat\": \"{{lat}}\",\n    \"long\": \"{{long}}\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/book-cab",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"book-cab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Completed Trip",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"trip_id\": \"{{trip_id}}\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/completed-trip",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"completed-trip"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8000"
+		}
+	]
+}

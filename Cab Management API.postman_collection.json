@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "39ff716f-31a4-4aab-b6a9-fd61d4069b96",
+		"name": "Cab Management API",
+		"description": "Collection for Cab Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32698412"
+	},
+	"item": [
+		{
+			"name": "Register Cab",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"{{type}}\",\n    \"some_other_field\": \"{{some_other_field}}\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Location",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/update-location?cab_id={{cab_id}}&latitude={{latitude}}&longitude={{longitude}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"update-location"
+					],
+					"query": [
+						{
+							"key": "cab_id",
+							"value": "{{cab_id}}"
+						},
+						{
+							"key": "latitude",
+							"value": "{{latitude}}"
+						},
+						{
+							"key": "longitude",
+							"value": "{{longitude}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8000"
+		}
+	]
+}

@@ -1,0 +1,2 @@
+LAT_SEARCH = [-5, 5]
+LONG_SEARCH = [-5, 5]
